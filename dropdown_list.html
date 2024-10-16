@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form dengan Dropdown dan Listbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a9ce0;
+            color: white;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        form p {
+            margin-bottom: 15px;
+        }
+
+        form p > label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        form input[type="text"], form textarea, form select, form input[type="submit"] {
+            border: 1px solid #0a9ce0;
+            padding: 8px;
+            width: calc(100% - 160px);
+            border-radius: 4px;
+        }
+
+        form select[multiple] {
+            height: auto;
+            padding: 8px;
+        }
+
+        form input[type="submit"] {
+            background-color: #0a9ce0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0c73a3;
+        }
+
+        form input[type="radio"], form input[type="checkbox"] {
+            width: auto;
+        }
+
+        form input[type="radio"] + label, form input[type="checkbox"] + label {
+            margin-left: 5px;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Form dengan Dropdown dan Listbox</h1>
+</header>
+
+<form action="proses.php" method="post">
+    <fieldset>
+        <legend>Data Pelanggan</legend>
+
+        <p>
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama">
+        </p>
+
+        <p>
+            <label for="alamat">Alamat</label>
+            <textarea id="alamat" name="alamat" cols="30" rows="4"></textarea>
+        </p>
+
+        <p>
+            <label for="kelamin">Jenis Kelamin</label>
+            <input id="jk_l" type="radio" name="kelamin" value="L">
+            <label for="jk_l">Laki-laki</label>
+            <input id="jk_p" type="radio" name="kelamin" value="P">
+            <label for="jk_p">Perempuan</label>
+        </p>
+
+        <p>
+            <label for="hobi">Hobi</label>
+            <select name="hobi[]" id="hobi" multiple>
+                <option value="membaca">Membaca</option>
+                <option value="bermain">Bermain Musik</option>
+                <option value="olahraga">Olahraga</option>
+                <option value="traveling">Traveling</option>
+                <option value="coding">Coding</option>
+                <option value="memasak">Memasak</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="pekerjaan">Pekerjaan</label>
+            <select name="pekerjaan" id="pekerjaan">
+                <option value="pelajar">Pelajar</option>
+                <option value="mahasiswa">Mahasiswa</option>
+                <option value="karyawan">Karyawan</option>
+                <option value="pengusaha">Pengusaha</option>
+                <option value="freelancer">Freelancer</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="skill">Keahlian</label>
+            <select name="skill[]" id="skill" multiple>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="submit" value="Kirim">
+        </p>
+
+    </fieldset>
+</form>
+
+</body>
+</html>
